@@ -15,10 +15,8 @@
   <%= @star.classification %>
 </p>
 
-<p>
-  <strong>Galaxy:</strong>
-  <%= @star.galaxy_id %>
-</p>
-
-<%= link_to 'Edit', edit_galaxy_star_path(@galaxy, @star) %> |
-<%= link_to 'Back', galaxy_path(@galaxy) %>
+<%= link_to 'Edit', edit_galaxy_star_path(@star.galaxy_id) %>
+|
+<%= link_to 'Back', galaxy_path(@star.galaxy_id)%>
+|
+<%= link_to 'Destroy', galaxy_star_path(@star), method: :delete, data: { confirm: 'Are you sure?' } %>

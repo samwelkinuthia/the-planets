@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class StarsController < ApplicationController
-  before_action :set_star, only: [:show, :edit, :update, :destroy]
+  before_action :set_star, only: %i[show edit update destroy]
 
   # GET /stars
   # GET /stars.json
@@ -11,15 +13,13 @@ class StarsController < ApplicationController
   # GET /stars/1
   # GET /stars/1.json
   def show
-    @galaxy = Galaxy.find(params[:galaxy_id])
-    @star = Galaxy.find(params[:id])
-    render :show
   end
 
   # GET /stars/new
   def new
     @galaxy = Galaxy.find(params[:galaxy_id])
     @star = @galaxy.stars.new
+    render :new
   end
 
   # GET /stars/1/edit
@@ -66,19 +66,20 @@ class StarsController < ApplicationController
     @star = Star.find(params[:id])
     @star.destroy
     respond_to do |format|
-      format.html { redirect_to galary_stars_url, notice: 'Star was successfully destroyed.' }
+      format.html { redirect_to galaxy_path(@star.galaxy), notice: 'Star was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_star
-      @star = Star.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def star_params
-      params.require(:star).permit(:name, :image, :classification, :galaxy_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_star
+    @star = Star.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def star_params
+    params.require(:star).permit(:name, :image, :classification)
+  end
 end

@@ -28,4 +28,5 @@
 
 <% @galaxy.stars.each do |star| %>
   <p><%= star.name %></p>
+  <%= link_to 'Show', galaxy_star_path(@galaxy, star)%>
 <%end%>

@@ -2,5 +2,4 @@
 
 <%= render 'form', star: @star %>
 
-<%= link_to 'Show', @star %> |
-<%= link_to 'Back', galaxies_path %>
+<%= link_to 'Back', galaxy_star_path(@star.galaxy_id) %>

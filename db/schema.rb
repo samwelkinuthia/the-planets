@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_03_011325) do
+ActiveRecord::Schema.define(version: 2020_01_03_050405) do
 
   create_table "galaxies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(version: 2020_01_03_011325) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "supercluster_id", null: false
     t.index ["supercluster_id"], name: "index_galaxies_on_supercluster_id"
+  end
+
+  create_table "planets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.string "life"
+    t.integer "moons"
+    t.string "image"
+    t.bigint "star_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["star_id"], name: "index_planets_on_star_id"
   end
 
   create_table "stars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -40,5 +51,6 @@ ActiveRecord::Schema.define(version: 2020_01_03_011325) do
   end
 
   add_foreign_key "galaxies", "superclusters"
+  add_foreign_key "planets", "stars"
   add_foreign_key "stars", "galaxies"
 end
