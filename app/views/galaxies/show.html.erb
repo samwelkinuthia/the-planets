@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Back', galaxies_path%> | <%= link_to 'Edit', edit_galaxy_path(@galaxy) %> | <%= link_to 'Delete', @galaxy, method: :delete, data: { confirm: 'Are you sure?' } %>
+<p>
+  <strong>Name:</strong>
+  <%= @galaxy.name %>
+</p>
+
+<p>
+  <strong>Shape:</strong>
+  <%= @galaxy.shape %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @galaxy.image %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @galaxy.size %>
+</p>
+
+<br>
+<hr>
+
+<%= link_to 'Add Star', new_galaxy_star_path(@galaxy, @star)%>
+
+<% @galaxy.stars.each do |star| %>
+  <p><%= star.name %></p>
+<%end%>
