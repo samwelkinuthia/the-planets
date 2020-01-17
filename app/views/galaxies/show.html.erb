@@ -1,32 +1,43 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Back', galaxies_path%> | <%= link_to 'Edit', edit_galaxy_path(@galaxy) %> | <%= link_to 'Delete', @galaxy, method: :delete, data: { confirm: 'Are you sure?' } %>
-<p>
-  <strong>Name:</strong>
-  <%= @galaxy.name %>
-</p>
-
-<p>
-  <strong>Shape:</strong>
-  <%= @galaxy.shape %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @galaxy.image %>
-</p>
-
-<p>
-  <strong>Size:</strong>
-  <%= @galaxy.size %>
-</p>
-
+<div class="container">
+  <div class="row galaxy_show">
+    <div class="col-md-4 col-xs-8 galaxy_details">
+      <h3>Name:
+        <%= @galaxy.name %></h3>
+      <h4>Shape:
+        <%=@galaxy.shape%></h4>
+      <h4>Size:
+        <%=@galaxy.size%>
+        Light years wide.</h4>
+      <h4>Star Systems:
+        <%=@galaxy.stars.count%></h4>
+      <div>
+        <%= link_to 'Edit', edit_galaxy_path(@galaxy), class: "back"%>
+        <%= link_to 'Delete', @galaxy, method: :delete, data: { confirm: 'Are you sure?' }, class:"delete" %>
+      </div>
+      <%=image_tag @galaxy.image_url%>
+    </div>
+    <div class="col-md-8 col-xs-8 star_show">
+      <h3>
+        Stars
+        <%= link_to new_galaxy_star_path(@galaxy, @star), class:"star_add" do%> + <%end%>
+      </h3>
+    <% @galaxy.stars.each do |star| %>
+      <div class="col-md-4 col-xs-6 star_tab">
+        <%= link_to galaxy_star_path(@galaxy, star) do%>
+        <div>
+          <%=image_tag star.image_url%>
+        </div>
+        <h4><%= star.name %></h4>
+        <h5>Planets:
+          <%=star.planets.count%></h5>
+      <%end%>
+    </div>
+  <%end%>
+</div>
+</div>
 <br>
-<hr>
-
-<%= link_to 'Add Star', new_galaxy_star_path(@galaxy, @star)%>
-
-<% @galaxy.stars.each do |star| %>
-  <p><%= star.name %></p>
-  <%= link_to 'Show', galaxy_star_path(@galaxy, star)%>
-<%end%>
+<br>
+<%= link_to 'Back', galaxies_path, class:"back"%>
+</div>

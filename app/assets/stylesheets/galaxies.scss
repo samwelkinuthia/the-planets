@@ -1,3 +1,97 @@
 // Place all the styles related to the galaxies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.galaxy_show {
+  padding:2em;
+}
+
+.star_show {
+  // border-top-right-radius:10%;
+  background:rgba(128,128,128,0.08);
+  padding:1em;
+}
+.galaxy_add {
+  text-align: center;
+  a {
+    text-decoration: none;
+    color:white;
+    font-size: 3em;
+  }
+}
+
+.galaxy_main{
+  text-align: center;
+  a {
+    text-decoration: none;
+    color:white;
+    font-size: 10px;
+  }
+}
+
+.galaxy_tab {
+  text-align: center;
+  display: inline-block;
+  padding: 2em;
+  float:left;
+}
+
+img {
+  height:200px;
+  width:200px;
+}
+
+.form{
+  width:40%;
+  margin: auto;
+  color:black !important;
+  margin: auto;
+  padding: 2em;
+  font-size: 1.4em !important;
+  text-align: left;
+  border:1px solid white;
+  label {
+    color: white !important;
+  }
+  input {
+    width:100%;
+  }
+}
+
+.back {
+  background:rgba(128,128,128,0.5);
+  padding:0.5em;
+  color:white;
+  font-size:1.3em;
+  text-decoration: none;
+}
+.galaxy_details{
+  padding:1em;
+  border:1px solid white
+}
+.star_tab{
+  text-align: left;
+  margin:0.5em;
+  a{
+    color: white;
+  }
+  a:hover {
+    color:white;
+  }
+}
+
+.star_add {
+  float:right;
+  margin-top:0;
+  font-size: 2em;
+  color:white;
+}
+
+.delete {
+  margin-left: 0.5em;
+  background:rgba(255,0,0,0.5);
+  padding:0.5em;
+  color:white;
+  font-size:1.3em;
+  text-decoration: none;
+}

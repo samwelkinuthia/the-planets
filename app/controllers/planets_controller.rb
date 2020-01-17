@@ -4,7 +4,6 @@ class PlanetsController < ApplicationController
   # GET /planets
   # GET /planets.json
   def index
-    @planets = Planet.all
   end
 
   # GET /planets/1
@@ -24,11 +23,13 @@ class PlanetsController < ApplicationController
   # POST /planets
   # POST /planets.json
   def create
-    @planet = Planet.new(planet_params)
+    @galaxy = Galaxy.find(params[:galaxy_id])
+    @star = Star.find_by(id: params[:star_id])
+    @planet = @star.planets.new(planet_params)
 
     respond_to do |format|
       if @planet.save
-        format.html { redirect_to @planet, notice: 'Planet was successfully created.' }
+        format.html { redirect_to galaxy_star_path(@galaxy, @star), notice: 'Planet was successfully created.' }
         format.json { render :show, status: :created, location: @planet }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class PlanetsController < ApplicationController
   def update
     respond_to do |format|
       if @planet.update(planet_params)
-        format.html { redirect_to @planet, notice: 'Planet was successfully updated.' }
+        format.html { redirect_to galaxy_star_planet_path, notice: 'Planet was successfully updated.' }
         format.json { render :show, status: :ok, location: @planet }
       else
         format.html { render :edit }
@@ -56,7 +57,7 @@ class PlanetsController < ApplicationController
   def destroy
     @planet.destroy
     respond_to do |format|
-      format.html { redirect_to planets_url, notice: 'Planet was successfully destroyed.' }
+      format.html { redirect_to galaxy_star_path(@galaxy, @star), notice: 'Planet was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +70,6 @@ class PlanetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def planet_params
-      params.require(:planet).permit(:name, :life, :moons, :image, :star_id)
+      params.require(:planet).permit(:name, :life, :moons, :image, :star_id, :galaxy_id)
     end
 end

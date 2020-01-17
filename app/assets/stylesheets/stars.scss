@@ -1,3 +1,30 @@
 // Place all the styles related to the stars controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.star_intro {
+  border:1px solid red;
+  text-align: center;
+  padding: 1em;
+}
+.star_img {
+  height:400px;
+  width:400px;
+  border:2px solid blue;
+  padding: 0;
+}
+
+.star_show {
+  border:1px solid white;
+}
+
+.star_tab{
+  text-align: center;
+  // border: 1px solid green;
+  .star_planet_img {
+    border: 1px solid pink;
+  }
+  .star_planet_tab {
+    border:1px solid cyan;
+  }
+}

@@ -1,15 +1,4 @@
-<%= form_with(model: planet, local: true) do |form| %>
-  <% if planet.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(planet.errors.count, "error") %> prohibited this planet from being saved:</h2>
-
-      <ul>
-        <% planet.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for @planet, url: galaxy_star_planets_path, local: true do |form| %>
 
   <div class="field">
     <%= form.label :name %>
@@ -17,9 +6,20 @@
   </div>
 
   <div class="field">
-    <%= form.label :life %>
-    <%= form.text_field :life %>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
   </div>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.select :type, ['Terrestial', 'Dwarf', 'Gas giant']%>
+  </div>
+
+  <div class="field">
+    <%= form.label :life %>
+    <%= form.check_box :life %>
+  </div>
+
 
   <div class="field">
     <%= form.label :moons %>
@@ -28,12 +28,7 @@
 
   <div class="field">
     <%= form.label :image %>
-    <%= form.text_field :image %>
-  </div>
-
-  <div class="field">
-    <%= form.label :star_id %>
-    <%= form.text_field :star_id %>
+    <%= form.file_field :image %>
   </div>
 
   <div class="actions">

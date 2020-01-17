@@ -1,5 +1,7 @@
-<h1>Editing Galaxy</h1>
+<div class="container">
+  <h1>Editing <%=@galaxy.name%></h1>
 
-<%= render 'form', galaxy: @galaxy %>
+  <%= render 'form', galaxy: @galaxy %>
 
-<%= link_to 'Back', galaxy_path(@galaxy) %>
+  <%= link_to 'Back', galaxy_path(@galaxy), class:"back" %>
+</div>

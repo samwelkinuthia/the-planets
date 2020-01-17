@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'PF Din Text Cond Pro';
+    src: url('PFDinTextCondPro-Regular.woff2') format('woff2'),
+        url('PFDinTextCondPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PF Din Text Cond Pro';
+    src: url('PFDinTextCondPro-Bold.woff2') format('woff2'),
+        url('PFDinTextCondPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PF Din Text Cond Pro';
+    src: url('PFDinTextCondPro-Bold.woff2') format('woff2'),
+        url('PFDinTextCondPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PF Din Text Cond Pro';
+    src: url('PFDinTextCondPro-Regular.woff2') format('woff2'),
+        url('PFDinTextCondPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import "bootstrap";
+@import "font-awesome";
+@import "galaxies";
+@import "stars";
+
+body{
+  font-family: 'PF Din Text Cond Pro';
+  background: black;
+  color:white;
+  // background-image: url('star.jpg');
+  overflow-x: hidden;
+  // overflow-y: hidden;
+}
+
+.fullscreen-bg__video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  -webkit-filter: contrast(90%);
+  transition: 1s opacity;
+  position: absolute;
+}
+
+.top {
+  height:10px;
+  background: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color:white;
+  text-decoration: none;
+}
+
+video.fullscreen {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translate(-50%, -50%);
+}

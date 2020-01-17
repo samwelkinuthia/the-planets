@@ -1,16 +1,24 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="galaxy_div">
+    <div class="galaxy_add">
+      <%= link_to new_galaxy_path do%>
+      <p>+</p>
+    <%end%>
+  </div>
+  <div></div>
+</div>
+</div>
 
-<h1>Galaxies</h1>
-<%= link_to 'New Galaxy', new_galaxy_path %>
-    <% @galaxies.each do |galaxy| %>
-      <div>
-        <p>Name: <%= galaxy.name %></p>
-        <p>Supercluster <%= galaxy.supercluster.name %></p>
-        <p>Shape: <%= galaxy.shape %></p>
-        <p>PhotoUrl: <%= galaxy.image %></p>
-        <p>Size: <%= galaxy.size%> Light Years Wide</p>
-        <p><%= link_to 'Show', galaxy %></p>
-        <hr>
-      </div>
-    <% end %>
-<br>
+<div class="container">
+<% @galaxies.each do |galaxy| %>
+  <div class="galaxy_main">
+    <div class="galaxy_tab">
+      <%= link_to galaxy do %>
+        <%=image_tag galaxy.image_url :class => "image"%>
+        <h3><%=galaxy.name%></h3>
+      <%end%>
+    </div>
+  </div>
+<% end %>
+</div>

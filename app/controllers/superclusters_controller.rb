@@ -1,5 +1,5 @@
 class SuperclustersController < ApplicationController
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_supercluster, only: [:show, :edit, :update, :destroy]
 
   def index
     @superclusters = Supercluster.all
@@ -9,7 +9,7 @@ class SuperclustersController < ApplicationController
   # GET /superclusters/1.json
   def show
     @galaxies = Galaxy.all
-    @supercluster = .Supercluster.find(params[:id])
+    @supercluster = Supercluster.find(params[:id])
   end
 
   # GET /superclusters/new
@@ -23,7 +23,7 @@ class SuperclustersController < ApplicationController
   # POST /superclusters
   # POST /superclusters.json
   def create
-    @supercluster = Supercluster.new(category_params)
+    @supercluster = Supercluster.new(supercluster_params)
 
     respond_to do |format|
       if @supercluster.save
@@ -40,7 +40,7 @@ class SuperclustersController < ApplicationController
   # PATCH/PUT /superclusters/1.json
   def update
     respond_to do |format|
-      if @supercluster.update(category_params)
+      if @supercluster.update(supercluster_params)
         format.html { redirect_to @supercluster, notice: 'Supercluster was successfully updated.' }
         format.json { render :show, status: :ok, location: @supercluster }
       else
@@ -63,12 +63,12 @@ class SuperclustersController < ApplicationController
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  def set_category
+  def set_supercluster
     @supercluster = Supercluster.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def category_params
+  def supercluster_params
     params.require(:supercluster).permit(:name)
   end
 

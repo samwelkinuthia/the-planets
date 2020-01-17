@@ -13,6 +13,9 @@ class StarsController < ApplicationController
   # GET /stars/1
   # GET /stars/1.json
   def show
+    @galaxy = Galaxy.find_by(id: params[:galaxy_id])
+    @star = Star.find(params[:id])
+    @planets = @star.planets
   end
 
   # GET /stars/new
@@ -80,6 +83,6 @@ class StarsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def star_params
-    params.require(:star).permit(:name, :image, :classification)
+    params.require(:star).permit(:name, :image, :classification, :galaxy_id)
   end
 end

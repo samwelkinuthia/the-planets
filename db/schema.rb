@@ -25,10 +25,12 @@ ActiveRecord::Schema.define(version: 2020_01_03_050405) do
 
   create_table "planets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
-    t.string "life"
+    t.boolean "life", default: false
     t.integer "moons"
     t.string "image"
-    t.bigint "star_id", null: false
+    t.string "type"
+    t.text "description"
+    t.bigint "star_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["star_id"], name: "index_planets_on_star_id"

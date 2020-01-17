@@ -4,12 +4,13 @@
     <title>Universe</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <%=render 'layouts/navigation'%>
+    <%#=video_tag("bg.mp4",loop: true, autoplay: true, muted: true, class:"fullscreen-bg__video")%>
     <%= yield %>
   </body>
 </html>

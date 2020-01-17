@@ -10,33 +10,41 @@
       </ul>
     </div>
   <% end %>
+  <div class="form">
+    <div class="form-inner">
+      <div class="form-group">
+        <%= form.label :name %>
+        <br>
+        <%= form.text_field :name%>
+      </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+      <div class="form-group">
+        <%= form.label :shape %>
+        <br>
+        <%= form.select :shape, ['Literally Shapeless', 'Figuratively Shapeless', 'Spiral', 'Elliptic']%>
+      </div>
 
-  <div class="field">
-    <%= form.label :shape %>
-    <%= form.select :shape, ['Literally Shapeless', 'Figuratively Shapeless', 'Spiral', 'Elliptic']%>
-  </div>
+      <div class="form-group">
+        <%= form.label :supercluster%>
+        <br>
+        <%= form.collection_select :supercluster_id, Supercluster.all, :id, :name%>
+      </div>
 
-  <div class="field">
-    <%= form.label :supercluster%>
-    <%= form.collection_select :supercluster_id, Supercluster.all, :id, :name%>
-  </div>
+      <div class="form-group">
+        <%= form.label :image %>
+        <br>
+        <%= form.file_field :image %>
+      </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div>
+      <div class="form-group">
+        <%= form.label :size %>
+        <br>
+        <%= form.number_field :size %>
+      </div>
 
-  <div class="field">
-    <%= form.label :size %>
-    <%= form.number_field :size %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+      <div class="actions">
+        <%= form.submit%>
+      </div>
+    </div>
   </div>
 <% end %>

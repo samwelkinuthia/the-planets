@@ -1,22 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @star.name %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @star.image %>
-</p>
-
-<p>
-  <strong>Classification:</strong>
-  <%= @star.classification %>
-</p>
-
-<%= link_to 'Edit', edit_galaxy_star_path(@star.galaxy_id) %>
-|
-<%= link_to 'Back', galaxy_path(@star.galaxy_id)%>
-|
-<%= link_to 'Destroy', galaxy_star_path(@star), method: :delete, data: { confirm: 'Are you sure?' } %>
+<div class="container-fluid">
+  <div class="row star_intro">
+    <div class="star_details">
+      <%=image_tag @star.image_url, class: "star_img"%>
+      <h3><%= @star.name %></h3>
+      <h4><%=@star.classification%></h4>
+    </div>
+    <div>
+      <%= link_to 'Edit', edit_galaxy_star_path(@star.galaxy_id), class: "back"%>
+      <%= link_to 'Delete', galaxy_star_path(@star), method: :delete, data: { confirm: 'Are you God?' }, class:"delete" %>
+    </div>
+  </div>
+  <div class="row star_show">
+    <h3>
+      Planets
+      <%= link_to new_galaxy_star_planet_path(@galaxy, @star), class:"star_add" do%>
+      +
+    <%end%>
+  </h3>
+  <% @planets.each do |planet| %>
+    <div class="col-md-4 col-xs-12 star_tab">
+      <%= link_to galaxy_star_planet_path(@galaxy, @star) do%>
+      <div class="star_planet_tab">
+        <div class="star_planet_img">
+          <%=image_tag planet.image_url%>
+        </div>
+        <h4>Name: <%= planet.name %></h4>
+        <h4>Type: <%= planet.type %></h4>
+      </div>
+    <%end%>
+  </div>
+<%end%>
+</div>
+<%= link_to 'Back', galaxy_path(@star.galaxy_id), class:"back"%>
+</div>

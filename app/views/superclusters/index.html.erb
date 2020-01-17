@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Planets</h1>
+    <% @superclusters.each do |supercluster| %>
+      <tr>
+        <td><%= supercluster.name %></td>
+        <td><%= link_to 'Show', supercluster %></td>
+      </tr>
+    <% end %>
+
+<br>

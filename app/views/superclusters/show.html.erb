@@ -1,0 +1,6 @@
+<%@galaxies.each do |galaxy|%>
+  <h1><%=galaxy.supercluster_id%></h1>
+  <p><%=galaxy.name%>: <%=galaxy.supercluster.name%></p>
+<%end%>
+
+<%= link_to 'Back', :back %>

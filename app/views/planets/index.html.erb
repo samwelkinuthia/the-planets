@@ -21,10 +21,9 @@
         <td><%= planet.life %></td>
         <td><%= planet.moons %></td>
         <td><%= planet.image %></td>
-        <td><%= planet.star_id %></td>
-        <td><%= link_to 'Show', planet %></td>
-        <td><%= link_to 'Edit', edit_planet_path(planet) %></td>
-        <td><%= link_to 'Destroy', planet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', galaxy_star_planet_path(@galaxy, @star, planet) %></td>
+        <td><%= link_to 'Edit', edit_galaxy_star_planet_path(@galaxy, @star, planet) %></td>
+        <td><%= link_to 'Destroy', galaxy_star_planet_path(@galaxy, @star, planet), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Planet', new_planet_path %>
+<%= link_to 'New Planet', new_galaxy_star_planet_path %>
