@@ -1,6 +1,6 @@
-<p id="notice"><%= notice %></p>
 
-<div class="container">
+<div class="container-fluid">
+  <p id="notice"><%= notice %></p>
   <div class="row galaxy_show">
     <div class="col-md-4 col-xs-8 galaxy_details">
       <h3>Name:
@@ -24,14 +24,14 @@
         <%= link_to new_galaxy_star_path(@galaxy, @star), class:"star_add" do%> + <%end%>
       </h3>
     <% @galaxy.stars.each do |star| %>
-      <div class="col-md-4 col-xs-6 star_tab">
+      <div class="col-md-3 col-xs-6 star_tab">
         <%= link_to galaxy_star_path(@galaxy, star) do%>
         <div>
           <%=image_tag star.image_url%>
         </div>
-        <h4><%= star.name %></h4>
-        <h5>Planets:
-          <%=star.planets.count%></h5>
+        <h3><%= star.name %></h3>
+        <h4>Planets:
+          <%=star.planets.count%></h4>
       <%end%>
     </div>
   <%end%>

@@ -4,12 +4,14 @@
 
 .galaxy_show {
   padding:2em;
+  text-align: center;
 }
 
 .star_show {
   // border-top-right-radius:10%;
-  background:rgba(128,128,128,0.08);
+  background:rgba(128,128,128,0.1);
   padding:1em;
+  margin-top: 1em;
 }
 .galaxy_add {
   text-align: center;
@@ -62,12 +64,14 @@ img {
   background:rgba(128,128,128,0.5);
   padding:0.5em;
   color:white;
+  margin-left: 0.1em;
   font-size:1.3em;
   text-decoration: none;
 }
 .galaxy_details{
   padding:1em;
-  border:1px solid white
+  border:2px solid #8c8c8c;
+  border-style: dotted;
 }
 .star_tab{
   text-align: left;
@@ -88,7 +92,7 @@ img {
 }
 
 .delete {
-  margin-left: 0.5em;
+  margin-left: 0.1em;
   background:rgba(255,0,0,0.5);
   padding:0.5em;
   color:white;

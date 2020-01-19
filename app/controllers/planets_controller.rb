@@ -12,6 +12,8 @@ class PlanetsController < ApplicationController
 
   # GET /planets/new
   def new
+    @galaxy = Galaxy.find(params[:galaxy_id])
+    @star = Star.find_by(id: params[:star_id])
     @planet = Planet.new
   end
 

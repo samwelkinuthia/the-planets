@@ -1,5 +1,7 @@
-<h1>Editing Star</h1>
+<div class="container">
+  <h1>Editing Star</h1>
 
-<%= render 'form', star: @star %>
+  <%= render 'form', star: @star %>
 
-<%= link_to 'Back', galaxy_star_path(@galaxy, @star)%>
+  <%= link_to 'Back', galaxy_star_path(@galaxy, @star), class:"back"%>
+</div>

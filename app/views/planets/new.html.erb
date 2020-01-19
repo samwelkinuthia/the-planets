@@ -1,5 +1,7 @@
-<h1>New Planet</h1>
+<div class="container">
+  <h1>New Planet</h1>
 
-<%= render 'form', planet: @planet %>
+  <%= render 'form', planet: @planet %>
 
-<%= link_to 'Back', galaxy_star_planets_path %>
+  <%= link_to 'Back', galaxy_star_path(@galaxy, @star), class: "back" %>
+</div>

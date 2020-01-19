@@ -2,28 +2,51 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.star_main {
+  padding: 3em;
+}
+
 .star_intro {
-  border:1px solid red;
+  position: relative;
   text-align: center;
-  padding: 1em;
+
+  .star_details {
+    position: absolute;
+    bottom: 0;
+    margin:auto;
+    right: 32%;
+    text-align: left;
+    h2 {
+      color: red;
+    }
+  }
+
+  .star_classification,
+  .star_name {
+    display: inline-block;
+    margin-right: 10em;
+    margin-left: 10em;
+  }
 }
 
 .star_show {
   text-align: center;
-  border:1px solid white;
+  // border: 1px solid white;
 }
 
 .star_tab {
   text-align: center;
-  border:1px solid red;
 }
 
 .star_planet_img {
-  float:left;
+  float: left;
 }
 
 .planet_details {
   text-align: center;
   // float:right;
+}
 
+.star_intro {
+  height: 500px;
 }
