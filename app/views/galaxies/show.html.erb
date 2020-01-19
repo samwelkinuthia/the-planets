@@ -24,13 +24,14 @@
       </h3>
     <% @galaxy.stars.each do |star| %>
       <div class="col-md-3 col-xs-6 star_tab">
-        <%= link_to galaxy_star_path(@galaxy, star) do%>
+        <%= link_to galaxy_star_path(star.galaxy_id, star) do%>
         <div>
           <%=image_tag star.image_url%>
         </div>
         <h3><%= star.name %></h3>
         <h4>Planets:
           <%=star.planets.count%></h4>
+          <h1><%= star.id%></h1>
       <%end%>
     </div>
   <%end%>

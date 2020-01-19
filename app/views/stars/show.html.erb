@@ -18,18 +18,18 @@
     </div>
   </div>
   <div class="row heading">
-    <h2>
+    <h1>
       PLANETS
       <%= link_to new_galaxy_star_planet_path(@galaxy, @star), class:"planet_add" do%>
       +
     <%end%>
-  </h2>
+  </h1>
   <%if !@planets.present?%>
     <h3>NO PLANETS HERE....YET</h3>
   <%else%>
     <div class="row planet_tab">
       <% @planets.each do |planet| %>
-        <%= link_to galaxy_star_planet_path(@galaxy, @star) do%>
+        <%= link_to galaxy_star_planet_path(@star.galaxy_id, @star, planet.id) do%>
         <div class="col-md-4 col-xs-12 star_tab">
           <div class="planet_det">
             <div class="star_planet_tab">

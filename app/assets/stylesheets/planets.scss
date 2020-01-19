@@ -1,3 +1,62 @@
 // Place all the styles related to the planets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.planet_main {
+  min-height: 100vh;
+  text-align: center;
+
+  .planet_row {
+
+    .planet_main_div {
+
+      .planet_heading {
+
+        h1 {
+          letter-spacing: 3px;
+          margin: 0.6em;
+          color:red;
+          font-size: 5em;
+        }
+
+      }
+
+      .planet_image {
+
+        #planet_image {
+          height: 600px;
+          width: 600px;
+        }
+
+      }
+
+      .life_image {
+        height: 100px;
+        width: 100px;
+      }
+    }
+
+    .planet_description {
+      padding: 2em;
+      margin-top: 5%;
+
+      .desc {
+        padding:2em;
+        text-align: left;
+        min-height: 70vh;
+        box-shadow: -3px 0 15px #ff0000;
+        text-shadow: 0 0 15px #ff0000;
+        h3 {
+          text-align: center !important;
+        }
+        p {
+          font-size:1.5em;
+        }
+        span {
+          font-size: 1.6em;
+          color:red;
+        }
+      }
+    }
+  }
+}

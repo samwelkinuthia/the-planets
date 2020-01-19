@@ -1,30 +1,50 @@
-<p id="notice"><%= notice %></p>
+<div class="container planet_main">
 
-<p>
-  <strong>Name:</strong>
-  <%= @planet.name %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Life:</strong>
-  <%= @planet.life %>
-</p>
+  <div class="row planet_row">
 
-<p>
-  <strong>Moons:</strong>
-  <%= @planet.moons %>
-</p>
+    <div class="col-md-8 col-xs-12 planet_main_div">
 
-<p>
-  <strong>Image:</strong>
-  <%= @planet.image %>
-</p>
+      <div class="planet_heading">
 
-<p>
-  <strong>Star:</strong>
-  <%= @planet.star_id %>
-</p>
+        <h1><%=@planet.name%></h1>
+        <%= link_to 'Back', galaxy_star_path, class:"back" %>
+        <%= link_to 'Edit', edit_galaxy_star_planet_path, class:"back" %>
+        <%= link_to 'Delete', galaxy_star_planet_path(@planet.star.galaxy_id, @planet.star_id, @planet), method: :delete, data: {confirm: 'Play God?'}, class:"delete" %>
 
-<%= link_to 'Edit', edit_galaxy_star_planet_path %>
-<%= link_to 'Back', galaxy_star_path %>
-<%= link_to 'Delete', galaxy_star_planet_path(@planet), method: :delete, data: {confirm: 'Are thoust sureth?'} %>
+      </div>
+
+      <div class="planet_image">
+
+        <%=image_tag @planet.image_url, id:"planet_image"%>
+
+      </div>
+
+      <%if @planet.life%>
+
+        <%=image_tag('life.png', class: "life_image")%>
+
+      <%else%>
+
+        <%=image_tag('death.png', class: "life_image")%>
+
+      <%end%>
+
+    </div>
+
+    <div class="col-md-4 col-xs-12 planet_description">
+      <div class="desc">
+        <h3>Information</h3>
+        <p><span>Type:</span>
+          <%=@planet.category%></p>
+        <p><span>Moons:</span>
+          <%=@planet.moons%></p>
+        <span>Description</span><br>
+        <p><%=@planet.description%></p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
