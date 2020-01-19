@@ -10,6 +10,7 @@
     <div>
       <%= link_to 'Edit', edit_galaxy_star_path(@star.galaxy_id), class: "back"%>
       <%= link_to 'Delete', galaxy_star_path(@star), method: :delete, data: { confirm: 'Are you God?' }, class:"delete" %>
+      <%= link_to 'Back', galaxy_path(@star.galaxy_id), class:"back"%>
     </div>
   </div>
   <div class="row star_show">
@@ -24,14 +25,16 @@
       <%= link_to galaxy_star_planet_path(@galaxy, @star) do%>
       <div class="star_planet_tab">
         <div class="star_planet_img">
-          <%=image_tag planet.image_url%>
+          <%#=image_tag planet.image_url%>
         </div>
-        <h4>Name: <%= planet.name %></h4>
-        <h4>Type: <%= planet.type %></h4>
+        <div class="planet_details">
+          <h4>Name: <%= planet.name %></h4>
+          <h4>Category: <%= planet.category %></h4>
+          <h4></h4>
+        </div>
       </div>
     <%end%>
   </div>
 <%end%>
 </div>
-<%= link_to 'Back', galaxy_path(@star.galaxy_id), class:"back"%>
 </div>

@@ -1,4 +1,4 @@
-<%= form_for @planet, url: galaxy_star_planets_path, local: true do |form| %>
+<%= form_for @planet, url: galaxy_star_planet_path(@planet), local: true do |form| %>
 
   <div class="field">
     <%= form.label :name %>
@@ -6,9 +6,20 @@
   </div>
 
   <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.select :category, ['Terrestial', 'Dwarf', 'Gas giant']%>
+  </div>
+
+  <div class="field">
     <%= form.label :life %>
     <%= form.check_box :life %>
   </div>
+
 
   <div class="field">
     <%= form.label :moons %>

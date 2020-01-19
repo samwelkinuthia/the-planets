@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_01_03_050405) do
     t.boolean "life", default: false
     t.integer "moons"
     t.string "image"
-    t.string "type"
+    t.string "category"
     t.text "description"
     t.bigint "star_id"
     t.datetime "created_at", precision: 6, null: false

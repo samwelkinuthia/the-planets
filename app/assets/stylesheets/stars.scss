@@ -7,24 +7,23 @@
   text-align: center;
   padding: 1em;
 }
-.star_img {
-  height:400px;
-  width:400px;
-  border:2px solid blue;
-  padding: 0;
-}
 
 .star_show {
+  text-align: center;
   border:1px solid white;
 }
 
-.star_tab{
+.star_tab {
   text-align: center;
-  // border: 1px solid green;
-  .star_planet_img {
-    border: 1px solid pink;
-  }
-  .star_planet_tab {
-    border:1px solid cyan;
-  }
+  border:1px solid red;
+}
+
+.star_planet_img {
+  float:left;
+}
+
+.planet_details {
+  text-align: center;
+  // float:right;
+
 }
