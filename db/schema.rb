@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_03_050405) do
+ActiveRecord::Schema.define(version: 2020_01_19_164512) do
 
   create_table "galaxies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2020_01_03_050405) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "supercluster_id", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_galaxies_on_slug", unique: true
     t.index ["supercluster_id"], name: "index_galaxies_on_supercluster_id"
   end
 

@@ -23,6 +23,8 @@ gem 'pry'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'jquery-rails'
 gem "font-awesome-rails"
+gem 'friendly_id', '~> 5.2.4' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
