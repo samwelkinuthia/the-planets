@@ -2,8 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.planet_add {
+  
+}
 .star_main {
   padding: 3em;
+}
+.heading {
+  background:rgba(255, 204, 204, 0.06);
+  text-align: center;
+  h2 {
+    color:red !important;
+  }
 }
 
 .star_intro {
@@ -35,16 +45,38 @@
 }
 
 .star_tab {
-  text-align: center;
+  padding:1em;
+  // margin: 1em;
+  // border:1px solid red;
+  // text-align: center;
 }
 
+.planet_tab {
+  margin-left: 20%;
+  text-align: center;
+  a {
+    text-decoration: none;
+    color:white;
+  }
+}
+
+.planet_det {
+  height:300px;
+  h2 {
+    color:red !important;
+  }
+}
 .star_planet_img {
+  // border:1px solid pink;
   float: left;
 }
 
 .planet_details {
+  background:rgba(128,128,128,0.2);
   text-align: center;
-  // float:right;
+  float:left;
+  height: 202px;
+  width:220px;
 }
 
 .star_intro {

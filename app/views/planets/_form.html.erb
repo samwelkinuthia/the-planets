@@ -4,31 +4,37 @@
   <div class="form-inner">
     <div class="form-group">
       <%= form.label :name %>
+      <br>
       <%= form.text_field :name %>
     </div>
 
     <div class="form-group">
       <%= form.label :description %>
-      <%= form.text_area :description %>
+      <br>
+      <%= form.text_area :description%>
     </div>
 
     <div class="form-group">
       <%= form.label :category %>
+      <br>
       <%= form.select :category, ['Terrestial', 'Dwarf', 'Gas giant']%>
     </div>
 
     <div class="form-group">
       <%= form.label :life %>
-      <%= form.check_box :life %>
+      <br>
+      <%= form.check_box :life, :style => "width: 20px; height: 20px;"  %>
     </div>
 
     <div class="form-group">
       <%= form.label :moons %>
+      <br>
       <%= form.number_field :moons %>
     </div>
 
     <div class="form-group">
       <%= form.label :image %>
+      <br>
       <%= form.file_field :image %>
     </div>
 

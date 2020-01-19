@@ -17,34 +17,38 @@
       </span>
     </div>
   </div>
-  <div class="row star_show">
-    <h3>
-      Planets
-      <%= link_to new_galaxy_star_planet_path(@galaxy, @star), class:"star_add" do%>
+  <div class="row heading">
+    <h2>
+      PLANETS
+      <%= link_to new_galaxy_star_planet_path(@galaxy, @star), class:"planet_add" do%>
       +
     <%end%>
-  </h3>
+  </h2>
   <%if !@planets.present?%>
     <h3>NO PLANETS HERE....YET</h3>
   <%else%>
-    <% @planets.each do |planet| %>
-      <div class="col-md-4 col-xs-12 star_tab">
+    <div class="row planet_tab">
+      <% @planets.each do |planet| %>
         <%= link_to galaxy_star_planet_path(@galaxy, @star) do%>
-        <div class="star_planet_tab">
-          <div class="star_planet_img">
-            <%#=image_tag planet.image_url%>
-            </div>
-            <div class="planet_details">
-              <h4>Name:
-                <%= planet.name %></h4>
-              <h4>Category:
-                <%= planet.category %></h4>
-              <h4></h4>
+        <div class="col-md-4 col-xs-12 star_tab">
+          <div class="planet_det">
+            <div class="star_planet_tab">
+              <div class="star_planet_img">
+                <%=image_tag planet.image_url%>
+              </div>
+              <div class="planet_details">
+                <h2><%= planet.name %></h2>
+                <h4>Category:
+                  <%= planet.category %></h4>
+                <h4>Moons: <%=planet.moons%></h4>
+                <h4>Life: <%=planet.life%></h4>
+              </div>
             </div>
           </div>
-        <%end%>
-      </div>
+        </div>
+      <%end%>
     <%end%>
   <%end%>
+</div>
 </div>
 </div>
