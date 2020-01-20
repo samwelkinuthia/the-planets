@@ -9,8 +9,7 @@
       <div class="planet_heading">
 
         <h1><%=@planet.name%></h1>
-        <h3><%=@planet.star_id%></h3>
-        <%= link_to 'Back', galaxy_star_path(@planet.star.galaxy_id, @planet.star_id), class:"back" %>
+        <%= link_to 'Go Back', galaxy_star_path(@planet.star.galaxy_id, @planet.star_id), class:"back" %>
         <%= link_to 'Update', edit_galaxy_star_planet_path, class:"back" %>
         <%= link_to 'Delete', galaxy_star_planet_path(@planet.star.galaxy_id, @planet.star_id, @planet), method: :delete, data: {confirm: 'Play God?'}, class:"delete" %>
 
