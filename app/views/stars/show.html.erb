@@ -1,7 +1,7 @@
 <div class="container-fluid star_main">
   <p id="notice"><%= notice %></p>
   <div class="row star_intro" style="background: linear-gradient( rgba(14, 41, 69, 0.1), rgba(0, 0, 0, 0.1)), url(<%=@star.image_url.to_s%>); background-repeat: no-repeat; background-size:contain;  background-position: center;">
-    <div>
+    <div class="star_buts">
       <%= link_to 'Back', galaxy_path(@star.galaxy_id), class:"back"%>
       <%= link_to 'Edit', edit_galaxy_star_path(@star.galaxy_id), class: "back"%>
       <%= link_to 'Delete', galaxy_star_path(@star), method: :delete, data: { confirm: 'Are you God?' }, class:"delete" %>

@@ -8,7 +8,8 @@ class PlanetsController < ApplicationController
 
   # GET /planets/1
   # GET /planets/1.json
-  def show; end
+  def show
+  end
 
   # GET /planets/new
   def new
@@ -23,7 +24,7 @@ class PlanetsController < ApplicationController
   # POST /planets
   # POST /planets.json
   def create
-    @galaxy = Galaxy.find(params[:galaxy_id])
+    @galaxy = Galaxy.find_by(params[:galaxy_id])
     @star = Star.find_by(id: params[:star_id])
     @planet = @star.planets.new(planet_params)
 
@@ -68,7 +69,7 @@ class PlanetsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_planet
-    @planet = Planet.find_by(params[:id])
+    @planet = Planet.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

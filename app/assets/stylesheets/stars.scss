@@ -4,35 +4,42 @@
 
 .planet_add {
   text-decoration: none;
-  color:white;
+  color: white;
   margin-left: 3em;
   font-size: 1.5em;
 }
+
 .star_main {
   padding: 3em;
 }
+
 .heading {
   // background:rgba(255, 204, 204, 0.06);
   text-align: center;
+
   h1 {
     padding-left: 4em;
-    border:2px dotted grey;
-    color:red !important;
+    border: 2px dotted grey;
+    color: #00FFFF !important;
   }
 }
 
 .star_intro {
+  .star_buts:nth-child(n) {
+    margin-right: 50%;
+  }
   position: relative;
   text-align: center;
   // border-bottom: 1px solid white;
   .star_details {
     position: absolute;
     bottom: 0;
-    margin:auto;
+    margin: auto;
     right: 32%;
     text-align: left;
+
     h2 {
-      color: red;
+      color: #00FFFF;
     }
   }
 
@@ -50,38 +57,41 @@
 }
 
 .star_tab {
-  padding:1em;
+  padding: 1em;
   // margin: 1em;
-  // border:1px solid red;
+  // border:1px solid #00FFFF;
   // text-align: center;
 }
 
 .planet_tab {
   margin-top: 2em;
   text-align: center;
+
   a {
     text-decoration: none;
-    color:white;
+    color: white;
   }
 }
 
 .planet_det {
-  height:300px;
+  height: 300px;
+
   h2 {
-    color:red !important;
+    color: #00FFFF !important;
   }
 }
+
 .star_planet_img {
   // border:1px solid pink;
   float: left;
 }
 
 .planet_details {
-  // background:rgba(128,128,128,0.09);
+  background:rgba(0, 255, 255,0.1);
   text-align: center;
-  float:left;
+  float: left;
   height: 202px;
-  width:220px;
+  width: 220px;
 }
 
 .star_intro {

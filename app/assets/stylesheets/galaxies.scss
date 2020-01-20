@@ -22,10 +22,11 @@
 }
 
 .galaxy_main{
+  color: #00ffff !important;
   text-align: center;
   a {
     text-decoration: none;
-    color:white;
+    color:#00ffff;
     font-size: 10px;
   }
 }
@@ -71,6 +72,12 @@ img {
   padding:1em;
   border:2px solid #8c8c8c;
   border-style: dotted;
+  div {
+    margin:1em;
+  }
+  span {
+    color: #00ffff;
+  }
 }
 .star_tab{
   text-align: left;

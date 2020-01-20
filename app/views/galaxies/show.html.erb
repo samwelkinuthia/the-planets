@@ -2,15 +2,16 @@
   <p id="notice"><%= notice %></p>
   <div class="row galaxy_show">
     <div class="col-md-4 col-xs-8 galaxy_details">
-      <h3>Name:
-        <%= @galaxy.name %></h3>
-      <h4>Shape:
+      <h4><span>Name:</span>
+        <%= @galaxy.name %></h4>
+      <h4><span>Shape</span>:
         <%=@galaxy.shape%></h4>
-      <h4>Size:
+      <h4><span>Size:</span>
         <%=@galaxy.size%>
         Light years wide.</h4>
-      <h4>Star Systems:
+      <h4><span>Star Systems:</span>
         <%=@galaxy.stars.count%></h4>
+      <h4><span>Parent supercluster:</span> <%=@galaxy.supercluster.name%></h4>
       <div>
         <%= link_to 'Edit', edit_galaxy_path(@galaxy), class: "back"%>
         <%= link_to 'Delete', @galaxy, method: :delete, data: { confirm: 'Are you sure?' }, class:"delete" %>
