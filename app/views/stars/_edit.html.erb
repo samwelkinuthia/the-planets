@@ -1,0 +1,24 @@
+<%= form_for @star, url: galaxy_star_path(@star), local: true do |form| %>
+<div class="form">
+  <div class="form-inner">
+    <div class="form-group">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :classification %>
+      <%= form.select :classification, ['yellow dwarf', 'white dwarf', 'red dwarf', 'stellar remnant', 'neutron star']%>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  </div>
+</div>
+<% end %>
