@@ -1,12 +1,15 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
   <div class="galaxy_div">
+    <%=link_to "New Supercluster", new_supercluster_path, class: "new_supercluster"%>/
+    <%=link_to "All Superclusters", superclusters_path, class: "new_supercluster"%>
     <div class="galaxy_add">
       <%= link_to new_galaxy_path do%>
       <p>+</p>
     <%end%>
   </div>
-  <div></div>
+  <div>
+  </div>
 </div>
 </div>
 
