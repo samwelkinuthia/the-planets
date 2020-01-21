@@ -5,6 +5,7 @@ class SuperclustersController < ApplicationController
 
   def index
     @superclusters = Supercluster.all
+    @supercluster = Supercluster.find_by(params[:id])
    end
 
   # GET /superclusters/1
