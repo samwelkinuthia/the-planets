@@ -1,11 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Planets</h1>
-    <% @superclusters.each do |supercluster| %>
-      <tr>
-        <td><%= supercluster.name %></td>
-        <td><%= link_to 'Show', supercluster %></td>
-      </tr>
-    <% end %>
+<% @superclusters.each do |supercluster| %>
+  <tr>
+    <td><%= supercluster.name %></td>
+    <td><%= link_to 'Show', supercluster %></td>
+  </tr>
+<% end %>
 
 <br>
+
+<div class="container">
+  <%@superclusters.each do |supercluster|%>
+    <div class="col-md-4 supercluster_tab">
+      <h3>Name: <%=supercluster.name%></h3>
+      <h4>Galaxies: <%=supercluster.galaxies.count%></h4>
+      <%supercluster.galaxies.each do |galaxy|%>
+        <h5><%=galaxy.name%></h5>
+      <%end%>
+    </div>
+  <%end%>
+</div>

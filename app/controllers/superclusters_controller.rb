@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class SuperclustersController < ApplicationController
-  before_action :set_supercluster, only: [:show, :edit, :update, :destroy]
+  before_action :set_supercluster, only: %i[show edit update destroy]
 
   def index
     @superclusters = Supercluster.all
@@ -27,7 +29,7 @@ class SuperclustersController < ApplicationController
 
     respond_to do |format|
       if @supercluster.save
-        format.html { redirect_to @supercluster, notice: 'Supercluster was successfully created.' }
+        format.html { redirect_to galaxies_path, notice: 'Supercluster was successfully created.' }
         format.json { render :show, status: :created, location: @supercluster }
       else
         format.html { render :new }
@@ -71,5 +73,4 @@ class SuperclustersController < ApplicationController
   def supercluster_params
     params.require(:supercluster).permit(:name)
   end
-
 end

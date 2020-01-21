@@ -1,7 +1,18 @@
-<h1>create supercluster</h1>
-
-<%= form_for @supercluster do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
-<p><%= f.submit %></p>
-<% end %>
+<div class="container">
+  <div class="container supercluster">
+    <%=link_to 'Back', galaxies_path, class:"back"%>
+    <%= form_for @supercluster do |f| %>
+    <div class="form">
+      <div class="form-inner">
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      </div>
+    </div>
+  <%end%>
+</div>
+</div>
