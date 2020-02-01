@@ -3,6 +3,8 @@
     <div class="container">
       <h2>Galaxies located in the <%=@supercluster.name%> supercluster</h2>
       <% @galaxies.each do |galaxy| %>
+      <%if galaxy.supercluster_id == @supercluster.id%>
+
         <div class="galaxy_main">
           <div class="galaxy_tab">
             <%= link_to galaxy do %>
@@ -11,6 +13,12 @@
           <%end%>
         </div>
       </div>
+
+      <%else%>
+
+        <h3>THIS LAMEASS SUPERCLUSTER HAS NO KNOWN GALAXIES</h3>
+
+      <%end%>
     <% end %>
   </div>
 </div>

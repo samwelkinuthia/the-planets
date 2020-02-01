@@ -1,8 +1,8 @@
 <div class="container supercluster_index">
   <p id="notice"><%= notice %></p>
   <%=link_to "Back", galaxies_path, class:"back"%>
-  <%=link_to supercluster_path(@supercluster) do%>
   <%@superclusters.each do |supercluster|%>
+  <%=link_to supercluster_path(supercluster) do%>
     <div class="col-md-4 supercluster_tab">
       <h3>Name:
         <%=supercluster.name%></h3>
