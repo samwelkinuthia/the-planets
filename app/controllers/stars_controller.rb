@@ -13,8 +13,8 @@ class StarsController < ApplicationController
   # GET /stars/1
   # GET /stars/1.json
   def show
-    @galaxy = Galaxy.find(params[:galaxy_id])
-    @star = Star.find(params[:id])
+    @galaxy = Galaxy.find_by(id: params[:galaxy_id])
+    @star = Star.find_by(id: params[:id])
     @planets = @star.planets
   end
 
@@ -27,8 +27,8 @@ class StarsController < ApplicationController
 
   # GET /stars/1/edit
   def edit
-    @galaxy = Galaxy.find(params[:galaxy_id])
-    @star = Star.find(params[:id])
+    @galaxy = Galaxy.find_by(id: params[:galaxy_id])
+    @star = Star.find_by(id: params[:id])
     render :edit
   end
 
@@ -66,7 +66,8 @@ class StarsController < ApplicationController
   # DELETE /stars/1
   # DELETE /stars/1.json
   def destroy
-    @star = Star.find_by(params[:id])
+    @galaxy = Galaxy.find_by(id: params[:id])
+    @star = Star.find_by(id: params[:id])
     @star.destroy
     respond_to do |format|
       format.html { redirect_to galaxy_path(@star.galaxy), notice: 'Star was successfully destroyed.' }
@@ -78,7 +79,7 @@ class StarsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_star
-    @star = Star.find_by(params[:id])
+    @star = Star.find_by(id: params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
