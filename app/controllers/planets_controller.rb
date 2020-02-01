@@ -60,7 +60,7 @@ class PlanetsController < ApplicationController
     @star = Star.find_by(id: params[:star_id])
     @planet.destroy
     respond_to do |format|
-      format.html { redirect_to galaxy_star_path(@galaxy), notice: 'Planet was successfully destroyed.' }
+      format.html { redirect_to galaxy_star_path(@galaxy, @star), notice: 'Planet was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,7 +69,7 @@ class PlanetsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_planet
-    @planet = Planet.find(params[:id])
+    @planet = Planet.find_by(id: params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
